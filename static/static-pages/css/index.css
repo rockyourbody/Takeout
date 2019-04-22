@@ -1,0 +1,786 @@
+/* 整体 */
+#app {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    position: relative;
+}
+#app .content >div {
+    display: none;
+}
+#app .content >div.on {
+    display: block;
+}
+
+/* 首页部分 */
+#app .content >div >section.msite {
+    width: 100%;
+}
+
+/* 首页部分--头部 */
+#app .content >div >section.msite .msite_header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    background: #3982FF;
+    z-index: 100;
+}
+#app .content >div >section.msite .msite_header .header_search {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+    /* height: 50%; */
+}
+#app .content >div >section.msite .msite_header .header_search .icon-soushuo {
+    font-size: 25px;
+    color: #fff;
+}
+#app .content >div >section.msite .msite_header .header_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    margin-left: -5%;
+    color: #fff;
+    /* text-align: center; */
+}
+#app .content >div >section.msite .msite_header .header_title .header_title_text {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+}
+#app .content >div >section.msite .msite_header .header_login {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/* 首页部分--导航 */
+#app .content >div >section.msite .msite_nav {
+    position: relative;
+    margin-top: 45px;
+    height: 200px;
+    background: #fff;
+}
+#app .content >div >section.msite .msite_nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(0.5);
+    background: #e4e4e4;
+}
+#app .content >div >section.msite .msite_nav .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+#app .content >div >section.msite .msite_nav .swiper-container .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+#app .content >div >section.msite .msite_nav .swiper-container .swiper-wrapper .swiper-slide .link_to_food {
+    width: 25%;
+}
+#app .content >div >section.msite .msite_nav .swiper-container .swiper-wrapper .swiper-slide .link_to_food .food_container {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    /* font-size: 0; */
+}
+#app .content >div >section.msite .msite_nav .swiper-container .swiper-wrapper .swiper-slide .link_to_food .food_container img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+#app .content >div >section.msite .msite_nav .swiper-container .swiper-wrapper .swiper-slide .link_to_food span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+
+/* 首页部分--列表 */
+#app .content >div >section.msite .msite_shop_list {
+    position: relative;
+    margin-top: 10px;
+    background: #fff;
+}
+#app .content >div >section.msite .msite_shop_list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleY(0.5);
+    background-color: #e4e4e4;
+}
+#app .content >div >section.msite .msite_shop_list .shop_header {
+    padding: 10px 10px 0;
+}
+#app .content >div >section.msite .msite_shop_list .shop_header .icon-xuanxiang {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #999;
+}
+#app .content >div >section.msite .msite_shop_list .shop_header .shop_header_title {
+    color: #999;
+    font-size: 14px;
+    line-height: 20px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container {
+    margin-bottom: 50px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li {
+    position: relative;
+    width: 100%;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f1f1f1;
+    transform: scaleY(0.5);
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a {
+    /* *zoom: 1; */
+    display: block;
+    box-sizing: border-box;
+    padding: 15px 8px;
+    width: 100%;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_left {
+    float: left;
+    box-sizing: border-box;
+    width: 23%;
+    height: 75px;
+    padding-right: 10px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_left .shop_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right {
+    float: right;
+    width: 77%;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header {
+    width: 100%;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header .shop_title {
+    float: left;
+    width: 140px;
+    color: #333;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header .shop_title::before {
+    content: '品牌';
+    display: inline-block;
+    font-size: 11px;
+    line-height: 11px;
+    color: #333;
+    background-color: #ffd930;
+    padding: 2px 2px;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header .shop_detail_ul {
+    float: right;
+    margin-top: 3px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_detail_header .shop_detail_ul .supports {
+    float: left;
+    font-size: 10px;
+    color: #999;
+    border: 1px solid #f1f1f1;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order {
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order .shop_rating_order_left {
+    float: left;
+    /* color: #ff9a0d; */
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order .shop_rating_order_left .rating_section {
+    float: left;
+    font-size: 10px;
+    color: #ff6000;
+    margin-left: 4px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order .shop_rating_order_left .order_section {
+    float: left;
+    font-size: 10px;
+    color: #666;
+    transform: scale(0.8);
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order .shop_rating_order_right {
+    float: right;
+    /* font-size: 0; */
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_rating_order .shop_rating_order_right .delivery_style {
+    /* transform-origin: 35px 0; */
+    transform: scale(0.7);
+    display: inline-block;
+    font-size: 12px;
+    padding: 1px;
+    margin-top: -5px;
+    border-radius: 2px;
+    border: 1px solid #02a774;
+    color: #02a774;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_distance {
+    width: 100%;
+    font-size: 12px;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_distance::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_distance .shop_delivery_msg {
+    float: left;
+    /* transform-origin: 0; */
+    transform: scale(0.9);
+    color: #666;
+}
+#app .content >div >section.msite .msite_shop_list .shop_container .shop_list .shop_li >a .shop_right .shop_distance .segmentation {
+    color: #ccc;
+}
+
+/* header公共部分 */
+#app .content >div >section .header {
+    background-color: #3982FF;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 100;
+}
+#app .content >div >section .header .header_title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    color: #fff;
+}
+
+/* 搜索部分 */
+#app .content >div >section.search {
+    width: 100%;
+}
+#app .content >div >section.search .search_form {
+    margin-top: 45px;
+    background-color: #fff;
+    padding: 12px 8px;
+}
+#app .content >div >section.search .search_form::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#app .content >div >section.search .search_form input {
+    height: 35px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: bold;
+    outline: none;
+}
+#app .content >div >section.search .search_form input.search_input {
+    float: left;
+    width: 79%;
+    border: 4px solid #f2f2f2;
+    font-size: 14px;
+    color: #333;
+    background-color: #f2f2f2;
+}
+#app .content >div >section.search .search_form input.search_submit {
+    float: right;
+    width: 18%;
+    border: 4px solid #3982FF;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3982FF;
+}
+
+/* 订单部分 */
+#app .content >div >section.order {
+    width: 100%;
+}
+#app .content >div >section.order .order_no_login {
+    padding-top: 140px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+#app .content >div >section.order .order_no_login >img {
+    display: block;
+    width: 100%;
+    height: 30%;
+}
+#app .content >div >section.order .order_no_login >h3 {
+    padding: 10px 0;
+    font-size: 17px;
+    color: #6a6a6a;
+}
+#app .content >div >section.order .order_no_login >button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    outline: none;
+    background: #3982FF;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 我的 */
+#app .content >div >section.profile {
+    width: 100%;
+}
+/* 我的--登录注册 */
+#app .content >div >section.profile .profile_number {
+    margin-top: 45.5px;
+}
+#app .content >div >section.profile .profile_number .profile_link {
+    position: relative;
+    display: block;
+    background: #3982FF;
+    padding: 20px 10px;
+}
+#app .content >div >section.profile .profile_number .profile_link::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.profile .profile_number .profile_link .profile_image {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: red;
+}
+#app .content >div >section.profile .profile_number .profile_link .profile_image .icon-rentou {
+    background: #e4e4e4;
+    font-size: 70px;
+    line-height: 60px;
+    margin-left: -3px;
+}
+#app .content >div >section.profile .profile_number .profile_link .user-info {
+    float: left;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+#app .content >div >section.profile .profile_number .profile_link .user-info p {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+}
+#app .content >div >section.profile .profile_number .profile_link .user-info p.user-info-top {
+    padding-bottom: 8px;
+}
+#app .content >div >section.profile .profile_number .profile-link .user-info p .user-icon {
+    display: inline-block;
+    margin-left: -15px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+#app .content >div >section.profile .profile_number .profile_link .user-info p .user-icon .icon-shouji {
+    font-size: 15px;
+}
+#app .content >div >section.profile .profile_number .profile_link .user-info p .icon-mobile-number {
+    font-size: 14px;
+    color: #fff;
+    margin-left: -4px;
+}
+#app .content >div >section.profile .profile_number .profile_link .arrow {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 15px;
+    top: 40%;
+}
+#app .content >div >section.profile .profile_number .profile_link .arrow .icon-arrow-right2 {
+    color: #fff;
+    font-size: 23px;
+    margin-left: -13px;
+}
+/* 我的--优惠积分 */
+#app .content >div >section.profile .profile_info_data {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    /* overflow: hidden; */
+}
+#app .content >div >section.profile .profile_info_data::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: #e4e4e4;
+    transform: scaleY(0.5);
+}
+#app .content >div >section.profile .profile_info_data .info_data_list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link {
+    float: left;
+    width: 33%;
+    text-align: center;
+    border-right: 1px solid #f1f1f1;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link .info_data_top {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    padding: 15px 5px 10px;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link .info_data_top span {
+    display: inline-block;
+    font-size: 30px;
+    color: #f90;
+    font-weight: 700;
+    line-height: 30px;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link .info_data_bottom {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link:nth-of-type(2) .info_data_top span {
+    color: #ff5f3e;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link:nth-of-type(3) {
+   border: 0;
+}
+#app .content >div >section.profile .profile_info_data .info_data_list .info_data_link:nth-of-type(3) .info_data_top span {
+   color: #6ac20b;
+}
+/* 我的--商城/服务 */
+#app .content >div >section.profile .profile_my_order {
+    position: relative;
+    margin-top: 10px;
+    background: #fff;
+}
+#app .content >div >section.profile .profile_my_order::before {
+    content: '';
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    background-color: #e4e4e4;
+}
+#app .content >div >section.profile .profile_my_order .my_order {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span .iconfont {
+    margin-left: -6px;
+    font-size: 20px;
+}
+#app .content >div >section.profile .profile_my_order .my_order .my_order_div {
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 18px 10px 18px 0;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+#app .content >div >section.profile .profile_my_order .my_order .my_order_div span {
+    display: block;
+    font-size: 15px;
+}
+#app .content >div >section.profile .profile_my_order .my_order .my_order_div .my_order_icon {
+    width: 10px;
+    height: 10px;
+}
+#app .content >div >section.profile .profile_my_order .my_order .my_order_div .my_order_icon .icon-arrow-right2 {
+    color: #bbb;
+    font-size: 15px;
+    margin-left: -10px;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span .icon-icon- {
+    color: #3982FF;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span .icon-jifen {
+    color: #3982FF;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span .icon-vip {
+    color: #3982FF;
+}
+#app .content >div >section.profile .profile_my_order .my_order >span .icon-zhongxinfuwu {
+    color: #3982FF;
+}
+
+/* 底部导航部分 */
+#app .footer_guide {
+    position: relative;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+#app .footer_guide::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    background-color: #e4e4e4;
+}
+#app .footer_guide .guide_item {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    color: #999;
+}
+#app .footer_guide .guide_item.on {
+    color: #3982FF;
+}
+#app .footer_guide .guide_item span {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#app .footer_guide .guide_item span .iconfont {
+    font-size: 22px;
+}
+
+/* 登录注册页 */
+#app >div.off {
+    display: none;
+}
+#app >div.on {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+}
+#app >div.on .loginContainer {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+#app >div.on .loginContainer .loginInner {
+    padding-top: 60px;
+    width: 80%;
+    margin: 0 auto;
+}
+#app >div.on .loginContainer .loginInner .login_header .login_logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #3982FF;
+    text-align: center;
+}
+#app >div.on .loginContainer .loginInner .login_header .login_header_title {
+    padding-top: 40px;
+    text-align: center;
+}
+#app >div.on .loginContainer .loginInner .login_header .login_header_title >a {
+    color: #333;
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+#app >div.on .loginContainer .loginInner .login_header .login_header_title >a:first-child {
+    margin-right: 40px;
+}
+#app >div.on .loginContainer .loginInner .login_header .login_header_title >a.on {
+    color: #3982FF;
+    font-weight: 700;
+    border-bottom: 2px solid #3982FF;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div {
+    display: none;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div.on {
+    display: block;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: 0;
+    font: 400 14px Arial;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div input:focus {
+    border: 1px solid #3982FF;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_message {
+    position: relative;
+    margin-top: 16px;
+    height: 48px;
+    font-size: 14px;
+    background: #fff;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_message .get_verification {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: 0;
+    color: #ccc;
+    font-size: 14px;
+    background: transparent;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_verification {
+    position: relative;
+    margin-top: 16px;
+    height: 48px;
+    font-size: 14px;
+    background: #fff;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_hint {
+    margin-top: 12px;
+    color: #999;
+    font-size: 14px;
+    line-height: 20px;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_hint >a {
+    color: #3982FF;
+}
+/* 明文/暗文切换 */
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_verification .switch_button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 6px;
+    width: 30px;
+    height: 16px;
+    line-height: 16px;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_verification .switch_button >.switch_circle {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_verification .switch_button.off .switch_text {
+    float: right;
+    color: #ddd;
+}
+#app >div.on .loginContainer .loginInner .login_content >form >div .login_verification .switch_button.on {
+    background: #3982FF;
+}
+#app >div.on .loginContainer .loginInner .login_content >form .login_submit {
+    display: block;
+    width: 100%;
+    height: 42px;
+    margin-top: 30px;
+    border-radius: 4px;
+    background: #3982FF;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 42px;
+    border: 0;
+}
+#app >div.on .loginContainer .loginInner .login_content .about_us {
+    display: block;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color: #999;
+}
+#app >div.on .loginContainer .loginInner .go_back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+#app >div.on .loginContainer .loginInner .go_back >i.iconfont {
+    font-size: 20px;
+    color: #999;
+}
