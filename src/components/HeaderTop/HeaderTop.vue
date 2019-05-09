@@ -47,6 +47,10 @@ export default {
     font-size: 25px;
     color: #fff;
 }
+.header .header_login .icon-person {
+  font-size: 25px;
+  color: #fff;
+}
 .header .header_title .header_title_text {
     display: block;
     font-size: 20px;

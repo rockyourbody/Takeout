@@ -1,7 +1,7 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="shops.length">
-      <li class="shop_li" v-for="(shop, index) in shops" :key="index">
+      <li class="shop_li" v-for="(shop, index) in shops" :key="index" @click="$router.push('/shop')">
         <a>
           <div class="shop_left">
             <img class="shop_img" :src="baseImgUrl + shop.image_path">
@@ -39,7 +39,7 @@
           </div>
         </a>
       </li>
-    </ul vif v->
+    </ul>
     <ul v-else>
       <li v-for="(item, index) in 6" :key="index">
         <img src="./images/shop_back.svg" alt="back">

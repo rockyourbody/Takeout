@@ -37,7 +37,7 @@
             </section>
               <section class="login_message">
                 <input type="text" maxlength="11" placeholder="验证码" v-model="captcha">
-                <img class="get_verification" src="./images/captcha.svg" alt="captcha">
+                <img class="get_verification" src="http://localhost:3000/captcha" alt="captcha" @click="getCaptcha" ref="captcha">
               </section>
           </div>
           <button class="login_submit">登录</button>
@@ -53,39 +53,54 @@
 </template>
 <script>
 import AlertTip from '../../components/AlertTip/AlertTip.vue'
+import {reqLoginPwd, reqSendCode, reqLoginSms} from '../../api'
 export default {
   data () {
     return {
-      loginWay: true,
-      phone: '',
-      code: '',
-      computeTime: 0,
+      loginWay: true,//切换登录方式
+      phone: '',//手机号检查
+      code: '',//短信验证码
+      computeTime: 0,//倒计时
       showPwd: false,
-      name: '',
-      pwd: '',
-      captcha: '',
+      name: '',//用户名
+      pwd: '',//密码
+      captcha: '',//图形验证码
       alertText: '',
       alertShow: false
     }
   },
   computed: {
+    //手机号验证
     rightPhone () {
       return /^1\d{10}$/.test(this.phone)
     }
   },
   methods: {
     //异步获取短信验证码
-    getCode () {
+    async getCode () {
       //如果没有计时
       if (!this.computeTime) {
         //启动倒计时
         this.computeTime = 30
-        const intervalId = setInterval(() => {
+        this.intervalId = setInterval(() => {
           this.computeTime --
           if(this.computeTime == 0) {
-            clearInterval(intervalId)
+            clearInterval(this.intervalId)
           }
         }, 1000)
+
+        //发送ajax请求（向指定手机号发送验证短信码）
+        const result = await reqSendCode(this.phone)
+        //错误情况下
+        if (result.code === 1) {
+          //显示提示
+          this.showAlert(result.msg)
+          //停止倒计时
+          if (this.computeTime) {
+            this.computeTime = 0
+            clearInterval(this.intervalId)
+          }
+        }
       }
     },
 
@@ -94,39 +109,77 @@ export default {
       this.alertText = alertText
     },
     //异步登录
-    login () {
+    async login () {
+      let result
+      //前台表单验证
       if (this.loginWay) {//短信登录
-        const {phone, code} = this
+        const {rightPhone, phone, code} = this
         if (!this.rightPhone) {
           //手机号不正确
           this.showAlert('手机号不正确')
+          return
         } else if (!/^\d{6}$/.test(code)) {
           //验证码不正确
           this.showAlert('验证码不正确')
+          return
         }
+        //发送ajax请求短信登录
+        result = await reqLoginSms(phone, code)
+
       } else {//密码登录
         const {name, pwd, captcha} = this
         if (!this.name) {
           //用户名不正确
           this.showAlert('用户名不正确')
+          return
         } else if (!this.pwd) {
           //密码不正确
           this.showAlert('密码不正确')
+          return
         } else if (!this.captcha) {
           //验证码不正确
           this.showAlert('验证码不正确')
+          return
         }
+
+        //发送ajax请求密码登录
+        result = await reqLoginPwd({name, pwd, captcha})
+      }
+
+      //停止倒计时
+      if (this.computeTime) {
+        this.computeTime = 0
+        clearInterval(this.intervalId)
+      }
+
+      //根据结果数据处理
+      if (result.code === 0) {
+        const user = result.data
+        //储存到state中
+        this.$store.dispatch('recordUser',user)
+        //跳转到profile页面
+        this.$router.replace('/profile')
+      } else {
+        //显示新的图片验证码
+        this.getCaptcha()
+        //出错提示
+        const msg = result.msg
+        this.showAlert(msg)
       }
     },
+    //关闭警告框
     closeTip () {
       this.alertShow = false
       this.alertText = ''
+    },
+    //获取一个新的图形验证码
+    getCaptcha () {
+      this.$refs.captcha.src = 'http://localhost:3000/captcha?time=' + Date.now()
     }
   },
   components: {
     AlertTip
   }
-
 }
 </script>
 <style>

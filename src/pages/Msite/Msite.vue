@@ -2,12 +2,15 @@
   <div class="msite">
     <!-- 首页--头部 -->
     <header-top :title="address.name">
-      <span class="header_search" slot="left">
+      <router-link class="header_search" slot="left" to="/search">
         <i class="iconfont icon-soushuo"></i>
-      </span>
-      <span class="header_login" slot="right">
-        <span class="header_login_text">登录|注册</span>
-      </span>
+      </router-link>
+      <router-link class="header_login" slot="right" :to="userInfo._id ? '/userInfo' : '/login'">
+        <span class="header_login_text" v-if="!userInfo._id">登录|注册</span>
+        <span class="header_login_text" v-else>
+          <i class="iconfont icon-person"></i>
+        </span>
+      </router-link>
     </header-top>
     <!-- 首页部分--导航 -->
     <nav class="msite_nav">
@@ -55,7 +58,7 @@ export default {
 
   },
   computed: {
-    ...mapState(['address', 'categorys']),
+    ...mapState(['address', 'categorys', 'userInfo']),
     //根据categorys一维数组生成一个二维数组
     categorysArr () {
       const {categorys} = this

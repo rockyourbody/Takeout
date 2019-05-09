@@ -7,6 +7,7 @@ export default function ajax (url, data={}, type='GET') {
     // 执行异步ajax请求
     let promise;
     if (type === 'GET') {
+      // 准备url,query参数数据
       let dataStr = ''
       Object.keys(data).forEach(key => {
         dataStr += key + '=' + data[key] + '&'
@@ -25,7 +26,7 @@ export default function ajax (url, data={}, type='GET') {
       // 成功了调用resolve()
       resolve(response.data)
     }).catch(function (error) {
-      // 失败了调用reject
+      // 失败了调用reject()
       reject(error)
     })
   })
