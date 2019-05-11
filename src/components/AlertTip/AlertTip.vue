@@ -16,7 +16,7 @@
       alertText: String
     },
     methods: {
-      closeTip() {
+      closeTip () {
         this.$emit('closeTip')
       }
     }

@@ -3,16 +3,18 @@
     <ShopHeader/>
     <div class="tab">
       <div class="tab-item">
-        <router-link to="/shop/goods">商品</router-link>
+        <router-link to="/shop/goods" replace>商品</router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/shop/ratings">评价</router-link>
+        <router-link to="/shop/ratings" replace>评价</router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/shop/info">商家</router-link>
+        <router-link to="/shop/info" replace>商家</router-link>
       </div>
     </div>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -43,7 +45,7 @@
       display block
       position relative
       &.router-link-active
-        color #02a774
+        color #3982FF
         &::after
           content ''
           position absolute
@@ -52,5 +54,5 @@
           width 35px
           height 2px
           transform translateX(-50%)
-          background #02a774
+          background #3982FF
 </style>
